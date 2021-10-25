@@ -1,12 +1,28 @@
-from Domain.creeazaLibrarie import creeaza_librarie, getId
+from Domain.creeazaLibrarie import creeaza_librarie, getId, getTipReducere, getPret
 
 
 def adauga_carte(id, titlu, gen, pret, tipReducere,lista):
+    '''
+    adauga o carte noua
+    :param id:
+    :param titlu:
+    :param gen:
+    :param pret:
+    :param tipReducere:
+    :param lista:
+    :return: lista
+    '''
     carte = creeaza_librarie(id, titlu, gen, pret, tipReducere)
     return lista + [carte]
 
 
 def get_by_id(id,lista):
+    '''
+    verifica daca o carte id ul dat este in lista
+    :param id:
+    :param lista:
+    :return: none sau cartea cu id ul cautat
+    '''
     for carte in lista:
         if getId(carte) == id:
             return carte
@@ -14,11 +30,26 @@ def get_by_id(id,lista):
 
 
 def stergere_carte(id, lista):
-
+    '''
+    sterge o carte din lista cu un id dat
+    :param id:
+    :param lista:
+    :return: lista noua
+    '''
     return [carte for carte in lista if getId(carte) != id]
 
 
 def modifica_carte(id, titlu, gen, pret, tipReducere,lista):
+    '''
+    modifica o carte din lista in functie de un id dat
+    :param id:
+    :param titlu:
+    :param gen:
+    :param pret:
+    :param tipReducere:
+    :param lista:
+    :return: lista modificata
+    '''
 
     l=[]
 
@@ -29,9 +60,4 @@ def modifica_carte(id, titlu, gen, pret, tipReducere,lista):
         else:
             l.append(x)
     return l
-
-
-
-
-
 

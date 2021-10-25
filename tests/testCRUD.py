@@ -1,5 +1,6 @@
 from Domain.creeazaLibrarie import creeaza_librarie, getTitlu, getId, getGen, getPret, getTipReducere
 from logic.CRUD import adauga_carte, stergere_carte, get_by_id
+from logic.functionalitati import discount
 
 
 def test_adauga():
@@ -22,3 +23,12 @@ def test_stergere():
 
     assert get_by_id("1", l) is None
     assert get_by_id("2", l)is not None
+
+
+def test_discount():
+    l=[]
+    l = adauga_carte("1", "moara cu noroc", "istoric", 100, "gold", l)
+
+    l= discount(l)
+
+    assert getPret(l[0]) == 90.0
