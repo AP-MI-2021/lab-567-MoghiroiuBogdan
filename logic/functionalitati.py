@@ -37,7 +37,7 @@ def modifica_genul(title, lista, noulgen):
         if getTitlu(carte) == title:
             listanoua = creeaza_librarie(getId(carte),
                                          getTitlu(carte),
-                                         getGen(noulgen),
+                                         noulgen,
                                          getPret(carte),
                                          getTipReducere(carte),
                                          )
@@ -45,3 +45,5 @@ def modifica_genul(title, lista, noulgen):
         else:
             l.append(carte)
     return l
+
+

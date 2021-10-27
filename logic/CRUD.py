@@ -61,3 +61,4 @@ def modifica_carte(id, titlu, gen, pret, tipReducere,lista):
             l.append(x)
     return l
 
+

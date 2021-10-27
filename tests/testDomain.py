@@ -6,6 +6,6 @@ def test_librarie():
 
     assert getId(l) == "1"
     assert getTitlu(l) == "moara cu noroc"
-    assert getGen(l)== "istoric"
+    assert getGen(l) == "istoric"
     assert getPret(l) == 200
     assert getTipReducere(l) == "silver"

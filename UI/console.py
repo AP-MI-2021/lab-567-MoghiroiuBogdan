@@ -2,7 +2,6 @@ from Domain.creeazaLibrarie import toString
 from logic.CRUD import adauga_carte, stergere_carte, modifica_carte
 from logic.functionalitati import discount, modifica_genul
 
-
 def ui_adauga_carte(lista):
     id = input("dati id ul:")
     titlu = input ("dati titlu:")
@@ -43,7 +42,11 @@ def ui_modifica_genul(lista):
     title = input("dati titlu pt care cartea sa isi modifice genul:")
     noulgen = input("dati noul gen:")
 
-    return modifica_genul(title,noulgen,lista)
+    return modifica_genul(title,lista,noulgen)
+
+
+def ui_minimul_pret(lista):
+    pass
 
 
 def menu(lista):
@@ -53,7 +56,8 @@ def menu(lista):
         print("2.sterge cartea:")
         print("3.modifica cartea")
         print("4.reducere de 5% pt silver si de 10% pt gold")
-        print("5. modifica genul dupa un titlu dat")
+        print("5.modifica genul dupa un titlu dat")
+        print("6.afiseaza pretul min in fct de gen dat")
         print("a. afiseaza cartea")
         print("x. IESIRE")
 
@@ -68,6 +72,9 @@ def menu(lista):
             lista = ui_discount_carte(lista)
         elif option == "5":
             lista=ui_modifica_genul(lista)
+        elif option == "6":
+            lista=ui_minimul_pret(lista)
+            print(lista)
         elif option == "a":
             show_all(lista)
         elif option == "x":
