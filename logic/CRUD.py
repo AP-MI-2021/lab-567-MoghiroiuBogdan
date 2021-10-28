@@ -31,7 +31,7 @@ def get_by_id(id,lista):
 
 def stergere_carte(id, lista):
     '''
-    sterge o carte din lista cu un id dat
+    sterge o carte din lista 
     :param id:
     :param lista:
     :return: lista noua
