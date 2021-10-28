@@ -66,7 +66,8 @@ def menu(lista):
         print("3.modifica cartea")
         print("4.reducere de 5% pt silver si de 10% pt gold")
         print("5.modifica genul dupa un titlu dat")
-        print("6.afiseaza pretul min in fct de gen dat")
+        print("6.afiseaza pretul min in fct de gen")
+        print("7.ordoneaza dupa pret")
         print("a. afiseaza cartea")
         print("x. IESIRE")
 
