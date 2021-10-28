@@ -71,7 +71,6 @@ def menu(lista):
         print("a. afiseaza cartea")
         print("x. IESIRE")
 
-
         option = input("dati numarul:")
         if option == "1":
             lista = ui_adauga_carte(lista)
