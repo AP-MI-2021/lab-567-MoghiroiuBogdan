@@ -68,8 +68,10 @@ def menu(lista):
         print("5.modifica genul dupa un titlu dat")
         print("6.afiseaza pretul min in fct de gen")
         print("7.ordoneaza dupa pret")
+        print("8.")
         print("a. afiseaza cartea")
         print("x. IESIRE")
+
 
         option = input("dati numarul:")
         if option == "1":
