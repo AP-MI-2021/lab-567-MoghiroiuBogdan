@@ -8,7 +8,7 @@ def creeaza_librarie(id, titlu, gen, pret, tipReducere):
     :param tipReducere:string
     :return:o vanzare
     '''
-    '''
+
     return {
         "id": id,
         "titlu": titlu,
@@ -17,10 +17,10 @@ def creeaza_librarie(id, titlu, gen, pret, tipReducere):
         "tipReducere": tipReducere
 
     }
-    '''
 
-    carte = [id,titlu,gen,pret,tipReducere]
-    return carte
+
+    #carte = [id,titlu,gen,pret,tipReducere]
+    #return carte
 
 
 def getId(librarie):
@@ -29,8 +29,8 @@ def getId(librarie):
     :param librarie:
     :return:id ul
     '''
-    #return librarie["id"]
-    return librarie[0]
+    return librarie["id"]
+    #return librarie[0]
 
 def getTitlu(librarie):
     '''
@@ -38,8 +38,8 @@ def getTitlu(librarie):
     :param librarire:
     :return: titlu
     '''
-    #return librarie["titlu"]
-    return librarie[1]
+    return librarie["titlu"]
+    #return librarie[1]
 
 
 def getGen(librarie):
@@ -48,8 +48,8 @@ def getGen(librarie):
     :param librarie:
     :return: gen
     '''
-    #return librarie["gen"]
-    return librarie[2]
+    return librarie["gen"]
+    #return librarie[2]
 
 
 def getPret(librarie):
@@ -58,8 +58,8 @@ def getPret(librarie):
     :param librarie:
     :return: pret
     '''
-    #return librarie["pret"]
-    return librarie[3]
+    return librarie["pret"]
+    #return librarie[3]
 
 def getTipReducere(librarie):
     '''
@@ -67,8 +67,8 @@ def getTipReducere(librarie):
     :param librarie:
     :return: reducere
     '''
-    #return librarie["tipReducere"]
-    return librarie[4]
+    return librarie["tipReducere"]
+    #return librarie[4]
 
 
 def toString(librarie):

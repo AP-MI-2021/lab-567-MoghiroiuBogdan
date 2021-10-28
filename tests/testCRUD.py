@@ -1,6 +1,6 @@
 from Domain.creeazaLibrarie import creeaza_librarie, getTitlu, getId, getGen, getPret, getTipReducere
 from logic.CRUD import adauga_carte, stergere_carte, get_by_id
-from logic.functionalitati import discount, modifica_genul
+from logic.functionalitati import discount, modifica_genul, pret_minim
 
 
 def test_adauga():
@@ -46,3 +46,13 @@ def test_modif_genul():
     assert getGen(l[0]) == "dramatic"
 
 
+def test_pret_minim():
+    l=[]
+    l = adauga_carte("1", "moara cu noroc", "istoric", 100, "gold", l)
+    l = adauga_carte("2", "moara cu noroc", "istoric", 50, "gold", l)
+    l = adauga_carte("3", "moara cu noroc", "istoric", 90, "gold", l)
+    l = adauga_carte("4", "moara cu noroc", "istoric", 60, "gold", l)
+
+    l=pret_minim(l)
+
+    assert l["istoric"] == 50

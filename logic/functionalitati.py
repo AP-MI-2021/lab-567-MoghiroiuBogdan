@@ -47,3 +47,16 @@ def modifica_genul(title, lista, noulgen):
     return l
 
 
+def pret_minim(lista):
+    rez={}
+
+    for carte in lista:
+        gen = getGen(carte)
+        pret = getPret(carte)
+        if gen in rez:
+            if pret < rez[gen]:
+                rez[gen] = pret
+        else:
+            rez[gen] = pret
+
+    return rez

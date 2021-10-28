@@ -1,16 +1,20 @@
 from Domain.creeazaLibrarie import toString
 from logic.CRUD import adauga_carte, stergere_carte, modifica_carte
-from logic.functionalitati import discount, modifica_genul
+from logic.functionalitati import discount, modifica_genul, pret_minim
+
 
 def ui_adauga_carte(lista):
-    id = input("dati id ul:")
-    titlu = input ("dati titlu:")
-    gen = input("dati gen:")
-    pret = float(input("dati pretul:"))
-    tipReducere= input("dati tipul reducerii:")
+    try:
+        id = input("dati id ul:")
+        titlu = input("dati titlu:")
+        gen = input("dati gen:")
+        pret = float(input("dati pretul:"))
+        tipReducere = input("dati tipul reducerii:")
 
-    return adauga_carte(id, titlu, gen, pret, tipReducere,lista)
-
+        return adauga_carte(id, titlu, gen, pret, tipReducere, lista)
+    except ValueError as ve:
+        print("eroare {}".format(ve))
+        return lista
 
 def ui_sterge_carte(lista):
     id = input("dati id ul:")
@@ -19,14 +23,17 @@ def ui_sterge_carte(lista):
 
 
 def ui_modifica_carte(lista):
-    id = input("dati id ul cartii care se va modifica:")
-    titlu = input("dati noul titlu:")
-    gen = input("dati noul gen:")
-    pret = float(input("dati noul pretul:"))
-    tipReducere = input("dati noul tip de reducere:")
+    try:
+        id = input("dati id ul cartii care se va modifica:")
+        titlu = input("dati noul titlu:")
+        gen = input("dati noul gen:")
+        pret = float(input("dati noul pretul:"))
+        tipReducere = input("dati noul tip de reducere:")
 
-    return modifica_carte(id, titlu, gen, pret, tipReducere,lista)
-
+        return modifica_carte(id, titlu, gen, pret, tipReducere,lista)
+    except ValueError as ve:
+        print("eroare {} ".format(ve))
+        return lista
 
 def show_all(lista):
     for carte in lista:
@@ -46,7 +53,9 @@ def ui_modifica_genul(lista):
 
 
 def ui_minimul_pret(lista):
-    pass
+    rezultat = pret_minim(lista)
+    for gen in rezultat:
+        print ("genul {} are pretul minim {}".format(gen, rezultat[gen]))
 
 
 def menu(lista):
@@ -73,8 +82,7 @@ def menu(lista):
         elif option == "5":
             lista=ui_modifica_genul(lista)
         elif option == "6":
-            lista=ui_minimul_pret(lista)
-            print(lista)
+            ui_minimul_pret(lista)
         elif option == "a":
             show_all(lista)
         elif option == "x":
