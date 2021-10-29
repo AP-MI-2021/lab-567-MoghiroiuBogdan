@@ -16,6 +16,7 @@ def ui_adauga_carte(lista):
         print("eroare {}".format(ve))
         return lista
 
+
 def ui_sterge_carte(lista):
     id = input("dati id ul:")
 
@@ -34,6 +35,7 @@ def ui_modifica_carte(lista):
     except ValueError as ve:
         print("eroare {} ".format(ve))
         return lista
+
 
 def show_all(lista):
     for carte in lista:

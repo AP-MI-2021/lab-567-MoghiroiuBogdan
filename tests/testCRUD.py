@@ -53,6 +53,7 @@ def test_pret_minim():
     l = adauga_carte("3", "moara cu noroc", "istoric", 90, "gold", l)
     l = adauga_carte("4", "moara cu noroc", "istoric", 60, "gold", l)
 
+
     l=pret_minim(l)
 
     assert l["istoric"] == 50
