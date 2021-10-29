@@ -68,3 +68,18 @@ def pret(carte):
 
 def ordoneaza_crescator(lista):
     return sorted(lista, key=pret)
+
+
+def get_number_of_titles(lista):
+    nr=1
+    rez={}
+    for carte in lista:
+        gen=getGen(carte)
+        titlu=getTitlu(carte)
+        if gen in rez:
+            if titlu != rez[gen]:
+                nr+=1
+                rez[gen]=nr
+        else:
+            rez[gen]=1
+    return rez

@@ -1,6 +1,6 @@
 from Domain.creeazaLibrarie import creeaza_librarie, getTitlu, getId, getGen, getPret, getTipReducere
 from logic.CRUD import adauga_carte, stergere_carte, get_by_id
-from logic.functionalitati import discount, modifica_genul, pret_minim, ordoneaza_crescator
+from logic.functionalitati import discount, modifica_genul, pret_minim, ordoneaza_crescator, get_number_of_titles
 
 
 def test_adauga():
@@ -70,4 +70,18 @@ def test_ordonare():
 
     assert getId(l[0]) == "2"
     assert getId(l[1]) == "4"
+
+
+def test_nr_of_titles():
+    l = []
+    l = adauga_carte("1", "moara cu noroc", "istoric", 100, "gold", l)
+    l = adauga_carte("2", "ion", "istoric", 50, "gold", l)
+    l = adauga_carte("3", "moara cu noroc", "dramatic", 90, "gold", l)
+    l = adauga_carte("4", "enigma", "istoric", 60, "gold", l)
+
+    l=get_number_of_titles(l)
+
+    assert l["istoric"] == 3
+    assert l["dramatic"] == 1
+
 

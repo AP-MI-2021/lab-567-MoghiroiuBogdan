@@ -1,6 +1,6 @@
 from Domain.creeazaLibrarie import toString
 from logic.CRUD import adauga_carte, stergere_carte, modifica_carte
-from logic.functionalitati import discount, modifica_genul, pret_minim, ordoneaza_crescator
+from logic.functionalitati import discount, modifica_genul, pret_minim, ordoneaza_crescator, get_number_of_titles
 
 
 def ui_adauga_carte(lista):
@@ -55,13 +55,16 @@ def ui_modifica_genul(lista):
 
 
 def ui_minimul_pret(lista):
-    rezultat = pret_minim(lista)
-    for gen in rezultat:
-        print ("genul {} are pretul minim {}".format(gen, rezultat[gen]))
+    return pret_minim(lista)
 
 
 def ui_ordoneaza_crescator(lista):
     return ordoneaza_crescator(lista)
+
+
+def ui_get_number_of_titles(lista):
+    return get_number_of_titles(lista)
+
 
 def menu(lista):
 
@@ -73,6 +76,7 @@ def menu(lista):
         print("5.modifica genul dupa un titlu dat")
         print("6.afiseaza pretul min in fct de gen")
         print("7.ordoneaza dupa pret")
+        print("8.Afișarea numărului de titluri distincte pentru fiecare gen")
         print("a. afiseaza cartea")
         print("x. IESIRE")
 
@@ -89,9 +93,11 @@ def menu(lista):
         elif option == "5":
             lista=ui_modifica_genul(lista)
         elif option == "6":
-            ui_minimul_pret(lista)
+            print(ui_minimul_pret(lista))
         elif option == "7":
             print(ui_ordoneaza_crescator(lista))
+        elif option == "8":
+            print(ui_get_number_of_titles(lista))
         elif option == "a":
             show_all(lista)
         elif option == "x":
