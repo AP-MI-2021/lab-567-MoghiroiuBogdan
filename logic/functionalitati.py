@@ -60,3 +60,7 @@ def pret_minim(lista):
             rez[gen] = pret
 
     return rez
+
+
+def ordoneaza_crescator(lista):
+    pass

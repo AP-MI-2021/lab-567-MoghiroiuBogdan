@@ -68,7 +68,6 @@ def menu(lista):
         print("5.modifica genul dupa un titlu dat")
         print("6.afiseaza pretul min in fct de gen")
         print("7.ordoneaza dupa pret")
-        print("8.")
         print("a. afiseaza cartea")
         print("x. IESIRE")
 
@@ -86,6 +85,8 @@ def menu(lista):
             lista=ui_modifica_genul(lista)
         elif option == "6":
             ui_minimul_pret(lista)
+        elif option == "7":
+            pass
         elif option == "a":
             show_all(lista)
         elif option == "x":
