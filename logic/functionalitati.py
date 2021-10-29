@@ -62,5 +62,9 @@ def pret_minim(lista):
     return rez
 
 
+def pret(carte):
+    return getPret(carte)
+
+
 def ordoneaza_crescator(lista):
-    pass
+    return sorted(lista, key=pret)
