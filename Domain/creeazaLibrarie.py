@@ -71,6 +71,7 @@ def getTipReducere(librarie):
     #return librarie[4]
 
 
+
 def toString(librarie):
     return "id: {}, titlu:{}, gen:{}, pret:{}, tipReducere:{}".format(
         getId(librarie),
