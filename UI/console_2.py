@@ -21,8 +21,9 @@ def menu(lista):
             option = input("introduceti comanda: ")
 
             action = option.split(";")
-            for command in action:
-                if option == "help":
+            for line in action:
+                command=line.split(",")
+                if command[0] == "help":
                     help()
                 elif command[0] == "add":
                     try:
