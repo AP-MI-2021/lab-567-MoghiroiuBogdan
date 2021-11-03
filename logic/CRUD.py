@@ -18,7 +18,7 @@ def adauga_carte(id, titlu, gen, pret, tipReducere,lista):
     carte = creeaza_librarie(id, titlu, gen, pret, tipReducere)
     if getPret(carte) < 0:
         raise ValueError(":pretul este negativ! Incorect")
-    if getTipReducere(carte) != "gold" and getTipReducere(carte) != "silver":
+    if getTipReducere(carte) != "gold" and getTipReducere(carte) != "silver" and getTipReducere(carte) != "none":
         raise ValueError(":reducerea adaugata nu exista")
     return lista + [carte]
 

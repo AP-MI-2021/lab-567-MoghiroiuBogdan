@@ -27,14 +27,14 @@ def MENU(lista):
                     help()
                 elif command[0] == "add":
                     try:
-                        lista=adauga_carte(command[1],command[2],float(command[3]),command[4],command[5],lista)
+                        lista=adauga_carte(command[1],command[2],command[3],float(command[4]),command[5],lista)
                     except ValueError as ve:
                         print("eroare {}".format(ve))
                 elif command[0] == "delete":
                     lista=stergere_carte(command[1],lista)
                 elif command[0] == "update":
                     try:
-                        lista=modifica_carte(command[1],command[2],float(command[3]),command[4],command[5],lista)
+                        lista=modifica_carte(command[1],command[2],command[3],float(command[4]),command[5],lista)
                     except ValueError as ve:
                         print("eroare {}".format(ve))
                 elif command[0] == "showall":
