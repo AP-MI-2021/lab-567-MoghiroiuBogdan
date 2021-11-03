@@ -15,7 +15,7 @@ def help():
     print("stop")
 
 
-def menu(lista):
+def MENU(lista):
 
     while True:
             option = input("introduceti comanda: ")
