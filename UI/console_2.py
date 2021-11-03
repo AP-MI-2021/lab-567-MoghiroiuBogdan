@@ -41,4 +41,4 @@ def menu(lista):
                         print("eroare {}".format(ve))
                         return lista
                 elif command[0] == "showall":
-                    show_all()
+                    show_all(lista)
