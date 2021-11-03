@@ -30,7 +30,6 @@ def MENU(lista):
                         lista=adauga_carte(command[1],command[2],float(command[3]),command[4],command[5],lista)
                     except ValueError as ve:
                         print("eroare {}".format(ve))
-                        return lista
                 elif command[0] == "delete":
                     lista=stergere_carte(command[1],lista)
                 elif command[0] == "update":
@@ -38,7 +37,6 @@ def MENU(lista):
                         lista=modifica_carte(command[1],command[2],float(command[3]),command[4],command[5],lista)
                     except ValueError as ve:
                         print("eroare {}".format(ve))
-                        return lista
                 elif command[0] == "showall":
                     show_all(lista)
                 elif command[0] == "stop":
