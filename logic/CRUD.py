@@ -69,7 +69,7 @@ def modifica_carte(id, titlu, gen, pret, tipReducere,lista):
             cartenoua = creeaza_librarie(id, titlu, gen, pret, tipReducere)
             if getPret(cartenoua) < 0:
                 raise ValueError (":pretul este negativ! Incorect")
-            if getTipReducere(cartenoua) != "Gold" and getTipReducere(cartenoua) != "Silver":
+            if getTipReducere(cartenoua) != "gold" and getTipReducere(cartenoua) != "silver" and getTipReducere(cartenoua) != "none" :
                 raise ValueError (":reducerea adaugata nu exista")
             l.append(cartenoua)
         else:
