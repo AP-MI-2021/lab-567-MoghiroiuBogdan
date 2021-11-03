@@ -12,7 +12,14 @@ def adauga_carte(id, titlu, gen, pret, tipReducere,lista):
     :param lista:
     :return: lista
     '''
+    if get_by_id(id,lista) is not None:
+        raise ValueError(":id-ul este deja folosit")
+
     carte = creeaza_librarie(id, titlu, gen, pret, tipReducere)
+    if getPret(carte) < 0:
+        raise ValueError(":pretul este negativ! Incorect")
+    if getTipReducere(carte) != "gold" and getTipReducere(carte) != "silver":
+        raise ValueError(":reducerea adaugata nu exista")
     return lista + [carte]
 
 
@@ -36,6 +43,8 @@ def stergere_carte(id, lista):
     :param lista:
     :return: lista noua
     '''
+    if get_by_id(id,lista) is None:
+        raise ValueError(":cartea pe care vrei sa o stergi nu exista")
     return [carte for carte in lista if getId(carte) != id]
 
 
@@ -50,15 +59,20 @@ def modifica_carte(id, titlu, gen, pret, tipReducere,lista):
     :param lista:
     :return: lista modificata
     '''
+    if get_by_id(id,lista) is None:
+        raise ValueError (":nu exista o carte cu id-ul dat")
 
     l=[]
 
     for x in lista:
         if getId(x) == id:
             cartenoua = creeaza_librarie(id, titlu, gen, pret, tipReducere)
+            if getPret(cartenoua) < 0:
+                raise ValueError (":pretul este negativ! Incorect")
+            if getTipReducere(cartenoua) != "Gold" and getTipReducere(cartenoua) != "Silver":
+                raise ValueError (":reducerea adaugata nu exista")
             l.append(cartenoua)
         else:
             l.append(x)
     return l
-
 

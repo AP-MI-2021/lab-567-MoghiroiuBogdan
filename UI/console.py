@@ -71,13 +71,13 @@ def menu(lista):
     while True:
         print("1.adauga cartea:")
         print("2.sterge cartea:")
-        print("3.modifica cartea")
-        print("4.reducere de 5% pt silver si de 10% pt gold")
-        print("5.modifica genul dupa un titlu dat")
-        print("6.afiseaza pretul min in fct de gen")
-        print("7.ordoneaza dupa pret")
-        print("8.Afișarea numărului de titluri distincte pentru fiecare gen")
-        print("a. afiseaza cartea")
+        print("3.modifica cartea:")
+        print("4.reducere de 5% pt silver si de 10% pt gold:")
+        print("5.modifica genul dupa un titlu dat:")
+        print("6.afiseaza pretul min in fct de gen:")
+        print("7.ordoneaza dupa pret:")
+        print("8.Afișarea numărului de titluri distincte pentru fiecare gen:")
+        print("a. afiseaza cartea:")
         print("x. IESIRE")
 
 
