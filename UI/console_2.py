@@ -18,15 +18,13 @@ def help():
 def menu(lista):
 
     while True:
-        option = input("introduceti comanda: ")
-        if option == "help":
-            help()
-        elif option == "stop":
-            break
-        else:
+            option = input("introduceti comanda: ")
+
             action = option.split(";")
             for command in action:
-                if command[0] == "add":
+                if option == "help":
+                    help()
+                elif command[0] == "add":
                     try:
                         lista=adauga_carte(command[1],command[2],command[3],command[4],command[5],lista)
                     except ValueError as ve:
@@ -42,3 +40,5 @@ def menu(lista):
                         return lista
                 elif command[0] == "showall":
                     show_all(lista)
+                elif command[0] == "stop":
+                    break
