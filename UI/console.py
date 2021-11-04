@@ -37,6 +37,7 @@ def ui_modifica_carte(lista):
         return lista
 
 
+
 def show_all(lista):
     for carte in lista:
         print(toString(carte))

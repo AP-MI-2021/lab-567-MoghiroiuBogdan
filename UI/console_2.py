@@ -41,3 +41,5 @@ def MENU(lista):
                     show_all(lista)
                 elif command[0] == "stop":
                     break
+                else:
+                    print("Comanda introdusa este gresita! Reincercati!")
