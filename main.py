@@ -13,5 +13,6 @@ def main():
     elif console == 2:
         MENU([])
 
+
 if __name__ == '__main__':
     main()
