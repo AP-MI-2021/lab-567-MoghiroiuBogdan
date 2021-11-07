@@ -32,6 +32,7 @@ def getId(librarie):
     return librarie["id"]
     #return librarie[0]
 
+
 def getTitlu(librarie):
     '''
     getter pt titlu
