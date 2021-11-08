@@ -3,7 +3,7 @@ from logic.CRUD import adauga_carte, stergere_carte, modifica_carte
 from logic.functionalitati import discount, modifica_genul, pret_minim, ordoneaza_crescator, get_number_of_titles
 
 
-def ui_adauga_carte(lista):
+def ui_adauga_carte(lista, undoList,redoList):
     try:
         id = input("dati id ul:")
         titlu = input("dati titlu:")
@@ -11,19 +11,26 @@ def ui_adauga_carte(lista):
         pret = float(input("dati pretul:"))
         tipReducere = input("dati tipul reducerii:")
 
-        return adauga_carte(id, titlu, gen, pret, tipReducere, lista)
+        rez = adauga_carte(id, titlu, gen, pret, tipReducere, lista)
+        undoList.append(lista)
+        redoList.clear()
+        return rez
+
     except ValueError as ve:
         print("eroare {}".format(ve))
         return lista
 
 
-def ui_sterge_carte(lista):
+def ui_sterge_carte(lista, undoList, redoList):
     id = input("dati id ul:")
 
-    return stergere_carte(id, lista)
+    rez = stergere_carte(id, lista)
+    undoList.append(lista)
+    redoList.clear()
+    return rez
 
 
-def ui_modifica_carte(lista):
+def ui_modifica_carte(lista, undoList, redoList):
     try:
         id = input("dati id ul cartii care se va modifica:")
         titlu = input("dati noul titlu:")
@@ -31,7 +38,10 @@ def ui_modifica_carte(lista):
         pret = float(input("dati noul pretul:"))
         tipReducere = input("dati noul tip de reducere:")
 
-        return modifica_carte(id, titlu, gen, pret, tipReducere,lista)
+        rez = modifica_carte(id, titlu, gen, pret, tipReducere,lista)
+        undoList.append(lista)
+        redoList.clear()
+        return rez
     except ValueError as ve:
         print("eroare {} ".format(ve))
         return lista
@@ -68,7 +78,8 @@ def ui_get_number_of_titles(lista):
 
 
 def menu(lista):
-
+    undoList=[]
+    redoList=[]
     while True:
         print("1.adauga cartea:")
         print("2.sterge cartea:")
@@ -78,17 +89,19 @@ def menu(lista):
         print("6.afiseaza pretul min in fct de gen:")
         print("7.ordoneaza dupa pret:")
         print("8.Afișarea numărului de titluri distincte pentru fiecare gen:")
+        print("u.Undo")
+        print("r.Redo")
         print("a. afiseaza cartea:")
         print("x. IESIRE")
 
 
         option = input("dati numarul:")
         if option == "1":
-            lista = ui_adauga_carte(lista)
+            lista = ui_adauga_carte(lista, undoList, redoList)
         elif option == "2":
-            lista = ui_sterge_carte(lista)
+            lista = ui_sterge_carte(lista,undoList, redoList)
         elif option == "3":
-            lista = ui_modifica_carte(lista)
+            lista = ui_modifica_carte(lista,undoList, redoList)
         elif option=="4":
             lista = ui_discount_carte(lista)
         elif option == "5":
@@ -99,6 +112,18 @@ def menu(lista):
             print(ui_ordoneaza_crescator(lista))
         elif option == "8":
             print(ui_get_number_of_titles(lista))
+        elif option == "u":
+            if len(undoList) > 0:
+                redoList.append(lista)
+                lista = undoList.pop()
+            else:
+                print("NU se poate face Undo!")
+        elif option == "r":
+            if len(redoList) >0:
+                undoList.append(lista)
+                lista=redoList.pop()
+            else:
+                print("NU se poate face Redo!")
         elif option == "a":
             show_all(lista)
         elif option == "x":
