@@ -19,7 +19,7 @@ def MENU(lista):
 
     while True:
             option = input("introduceti comanda: ")
-            
+
             action = option.split(";")
             for line in action:
                 command=line.split(",")

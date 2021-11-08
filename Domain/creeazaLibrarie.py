@@ -62,6 +62,7 @@ def getPret(librarie):
     return librarie["pret"]
     #return librarie[3]
 
+
 def getTipReducere(librarie):
     '''
     getter pt reducere

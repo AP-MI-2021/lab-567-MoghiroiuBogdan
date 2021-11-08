@@ -44,7 +44,7 @@ def stergere_carte(id, lista):
     :return: lista noua
     '''
     if get_by_id(id,lista) is None:
-        raise ValueError(":cartea pe care vrei sa o stergi nu exista")
+        raise ValueError(":cartea pe care vrei sa o stergi nu exista!")
     return [carte for carte in lista if getId(carte) != id]
 
 
